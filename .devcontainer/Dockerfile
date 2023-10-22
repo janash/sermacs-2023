@@ -13,7 +13,7 @@ RUN apt-get update \
  && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
 # Install the conda environment
-COPY ../codespaces.yml* /tmp/conda-tmp/
+COPY codespaces.yml /tmp/conda-tmp/
 
 RUN mamba env update -n base --file /tmp/conda-tmp/codespaces.yml
 
