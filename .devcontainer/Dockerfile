@@ -13,11 +13,9 @@ RUN apt-get update \
  && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
 # Install the conda environment
-COPY codespaces.yml* /tmp/conda-tmp/
+COPY ../codespaces.yml* /tmp/conda-tmp/
 
-RUN mamba env update -n base --file /tmp/conda-tmp/codespaces.yml \
- && mamba clean --all -f -y \
- && rm -rf /tmp/conda-tmp
+RUN mamba env update -n base --file /tmp/conda-tmp/codespaces.yml
 
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
 # COPY requirements.txt /tmp/pip-tmp/
