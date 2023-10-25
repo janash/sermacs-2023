@@ -15,7 +15,11 @@ RUN apt-get update \
 # Install the conda environment
 COPY codespaces.yml /tmp/conda-tmp/
 
-RUN mamba env update -n base --file /tmp/conda-tmp/codespaces.yml
+#RUN mamba env update -n base --file /tmp/conda-tmp/codespaces.yml
+
+RUN mamba install -c conda-forge "python=3.11" pandas plotly matplotlib numpy scipy sklearn rdkit pip
+
+RUN pip install nmrglue
 
 # [Optional] If your pip requirements rarely change, uncomment this section to add them to the image.
 # COPY requirements.txt /tmp/pip-tmp/
