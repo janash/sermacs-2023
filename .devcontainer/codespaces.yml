@@ -9,7 +9,7 @@ dependencies:
   - matplotlib
   - numpy
   - scipy
-  - sklearn
+  - scikit-learn
   - rdkit
   - pip:
     - nmrglue

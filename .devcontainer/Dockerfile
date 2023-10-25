@@ -15,9 +15,7 @@ RUN apt-get update \
 # Install the conda environment
 COPY codespaces.yml /tmp/conda-tmp/
 
-RUN conda  install -n base conda-libmamba-solver -c conda-forge
-
-RUN conda env update -n base --file /tmp/conda-tmp/codespaces.yml
+RUN mamba env update -n base --file /tmp/conda-tmp/codespaces.yml
 
 #RUN mamba install -c conda-forge "python=3.11" pandas plotly matplotlib numpy scipy sklearn rdkit pip
 
